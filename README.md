@@ -19,7 +19,7 @@ Implements 2/3 states:
     lambda::RgxMatch rgx_match(nfa_state);
     if(rgx_match.match("abba")) {
         // ...
-    } else{
+    } else {
         // does not match with given string
         return;
     }
