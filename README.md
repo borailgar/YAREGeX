@@ -7,6 +7,7 @@ Implenents 2/3 states:
     - Shunting-yard algorithm
     - https://www.engr.mun.ca/~theo/Misc/exp_parsing.htm
 2. [x] Regular Expression to NFA
+    - [Regular Expression Matching Can Be Simple and Fast](https://swtch.com/~rsc/regexp/regexp1.html)
     - Thompson's construction 
 3. [ ] NFA to DFA (not yet)
 
