@@ -2,7 +2,7 @@
 Yet another simple Regular Expression matching library. 
 Compiles NFA from regex string and simulates NFA using Thompson's algorithm. 
 
-Implenents 2/3 states: 
+Implements 2/3 states: 
 1. [x] Infix notation to postfix
     - Shunting-yard algorithm
     - https://www.engr.mun.ca/~theo/Misc/exp_parsing.htm
