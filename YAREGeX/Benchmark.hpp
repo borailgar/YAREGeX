@@ -1,19 +1,8 @@
 //
-// Basic instrumentation profiler by Cherno
+// Basic instrumentation profiler adapted from TheCherno (Youtube Channel)
+// https://www.youtube.com/watch?v=YG4jexlSAjc
+//
 
-// Usage: include this header file somewhere in your code (eg. precompiled header), and then use like:
-//
-// Instrumentor::Get().BeginSession("Session Name");        // Begin session
-// {
-//     InstrumentationTimer timer("Profiled Scope Name");   // Place code like this in scopes you'd like to include in
-//     profiling
-//     // Code
-// }
-// Instrumentor::Get().EndSession();                        // End Session
-//
-// You will probably want to macro-fy this, to switch on/off easily and use things like __FUNCSIG__ for the profile
-// name.
-//
 #pragma once
 #include <algorithm>
 #include <chrono>
