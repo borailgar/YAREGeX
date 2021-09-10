@@ -104,6 +104,9 @@ struct StateHelper
     // Add state to state-list.
     void patch_list(StateList *state_list, StatePtr_t &state)
     {
+#ifdef LDEBUG
+        PROFILE_FUNCTION();
+#endif
         StateList *temp;
         while (state_list)
         {
@@ -116,6 +119,9 @@ struct StateHelper
     // Merge two list of state.
     StateList *append_list(StateList *sList0, StateList *sList1)
     {
+#ifdef LDEBUG
+        PROFILE_FUNCTION();
+#endif
         StateList *iter;
         iter = sList0;
         while (sList0->next)

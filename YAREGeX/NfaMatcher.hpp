@@ -19,6 +19,7 @@
 #include <iostream>
 #endif
 
+#define NEW_WAY
 namespace lambda
 {
 
@@ -41,11 +42,8 @@ struct RgxMatch
 #ifdef LDEBUG
         PROFILE_FUNCTION();
 #endif
-        std::vector<StatePtr_t> curr;
-        std::vector<StatePtr_t> next;
 
-        curr = init(m_Start, m_L1);
-        next = m_L2;
+        init(m_Start, curr);
         for (const auto &ch : checkStr)
         {
             step(curr, ch, next);
@@ -61,7 +59,6 @@ struct RgxMatch
     {
         for (auto &state : sHolder)
         {
-            // TODO: return state->ch == static_cast<int>(State::Type::Match)
             if (state->ch == static_cast<int>(State::Type::Match))
             {
                 return true;
@@ -78,8 +75,11 @@ struct RgxMatch
     // add_state(...) also follows unlabeled ptr_arrows;
     // if state is a SPLIT state with two unlabeld ptr_arrows to new states,
     // add_state(...) add those states to the list instead of state
-    void add_state(std::vector<StatePtr_t> &states, StatePtr_t &state)
+    void add_state(std::vector<StatePtr_t> &nextHolder, StatePtr_t &state)
     {
+#ifdef LDEBUG
+        PROFILE_FUNCTION();
+#endif
         if (state == nullptr || state->last_list == m_ListID)
         {
             return;
@@ -88,19 +88,19 @@ struct RgxMatch
         state->last_list = m_ListID;
         if (state->ch == static_cast<int>(State::Type::Split))
         {
-            add_state(states, state->next0);
-            add_state(states, state->next1);
+            add_state(nextHolder, state->next0);
+            add_state(nextHolder, state->next1);
             return;
         }
-        states.push_back(state);
+        nextHolder.push_back(state);
     }
 
     // initial_state creates an initial state list by adding just a start state
-    std::vector<StatePtr_t> init(StatePtr_t &state, std::vector<StatePtr_t> &sHolder)
+    auto init(StatePtr_t &state, std::vector<StatePtr_t> &currHolder) -> decltype(currHolder)
     {
         m_ListID++;
-        add_state(sHolder, state);
-        return sHolder;
+        add_state(currHolder, state);
+        return currHolder;
     }
 
     // Finally, step advances NFA past a single character, using the current list (currentHolder)
@@ -126,11 +126,9 @@ struct RgxMatch
   private:
     // NFA has been built, we need to simulate it.
     // The simulation requires tracking State sets, which are stored as a simple vector:
-    std::vector<StatePtr_t> m_States;
     uint32_t m_ListID{0};
-
-    std::vector<StatePtr_t> m_L1;
-    std::vector<StatePtr_t> m_L2;
+    std::vector<StatePtr_t> curr;
+    std::vector<StatePtr_t> next;
 
     StatePtr_t m_Start;
 };
