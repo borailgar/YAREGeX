@@ -179,7 +179,7 @@ struct RgxString
                 m_TokenStack.pop();
             }
         }
-        if (!m_TokenStack.empty())
+        while (!m_TokenStack.empty())
         {
             m_Output.push_back(m_TokenStack.top().m_Ch);
             m_TokenStack.pop();

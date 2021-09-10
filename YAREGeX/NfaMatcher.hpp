@@ -19,7 +19,6 @@
 #include <iostream>
 #endif
 
-#define NEW_WAY
 namespace lambda
 {
 

@@ -2,7 +2,7 @@
 
 /**
  * C++ wrapper and implementation of Regular Expression Matching Can Be Simple and Fast article
- * Compiles regular expression to NFA. Supports (|) * + ? .
+ * Compiles regular expression to NState. Supports (|) * + ? .
  * For detail see the article https://swtch.com/~rsc/regexp/regexp1.html
  *
  * Author   : Bora Ilgar
@@ -24,7 +24,7 @@ namespace lambda
 // Represents State and it's StateType
 // According the scenario, state object created with two different ways
 // in StateType == Split case: other pointer (next1) may be used for searching.
-// in StateType == Match case: represents matched states in created NFA-state.
+// in StateType == Match case: represents matched states in created NState-state.
 struct State
 {
     enum class Type : uint32_t
@@ -70,10 +70,10 @@ template <typename T, typename U, typename... Args> StatePtr_t make_state(const 
 }
 
 // Holds state and it's stateList object.
-// Represents single NFA state.
-struct NFA
+// Represents single NState state.
+struct NState
 {
-    NFA(StatePtr_t &state, StateList *sl) : start(state), state_list(sl)
+    NState(StatePtr_t &state, StateList *sl) : start(state), state_list(sl)
     {
     }
     StateList *state_list;
@@ -111,7 +111,7 @@ struct StateHelper
         while (state_list)
         {
             temp = state_list->next;
-            state_list->start = state;
+            state_list->start = state; // TODO??
             state_list = temp;
         }
     }
@@ -146,7 +146,7 @@ StatePtr_t make_nfa(lambda::RgxString &&postRegex)
     PROFILE_FUNCTION();
 #endif
 
-    std::stack<NFA> nfa_stack;
+    std::stack<NState> nfa_stack;
     for (auto &&ch : postRegex)
     {
         if (ch >= 'a' && ch <= 'z')
