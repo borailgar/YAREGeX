@@ -12,12 +12,7 @@
  */
 
 #include "Rgx2Nfa.hpp"
-#include <vector>
-
-#ifdef LDEBUG
-#include "Benchmark.hpp"
-#include <iostream>
-#endif
+#include "yaregex_common.h"
 
 namespace lambda
 {

@@ -10,18 +10,9 @@
  * Version  : 0.9.1
  */
 
-#include <array>
-#include <cassert>
-#include <deque>
-#include <ostream>
-#include <stack>
+#include "yaregex_common.h"
 
 #define _IN_
-
-#ifdef LDEBUG
-#include "Benchmark.hpp"
-#include <iostream>
-#endif
 
 // Input   -> Intermediate  -> RESULT
 // =========================================

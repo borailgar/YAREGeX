@@ -1,23 +1,14 @@
-#include "Nfa2Dfa.hpp"
-#include "NfaMatcher.hpp"
-#include <chrono>
-#include <iostream>
+#include "Rgx2Nfa.hpp"
+
 #ifdef LDEBUG
 #include "Benchmark.hpp"
+#include <iostream>
 #endif
 
+using namespace lambda;
 int main(void)
 {
-    auto nfa = lambda::make_nfa({"a.(a|b)*"});
-    lambda::RgxMatch rgx_match(nfa);
-    if (rgx_match.match("abab"))
-    {
-        std::cout << "YES\n";
-    }
-    else
-    {
-        std::cout << "NO\n";
-    }
+    StatePtr_t nfa = make_nfa({"a.(a|b)*"});
 
     return 0;
 }

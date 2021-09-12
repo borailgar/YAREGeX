@@ -44,5 +44,8 @@
     <ClInclude Include="Nfa2Dfa.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="yaregex_common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
