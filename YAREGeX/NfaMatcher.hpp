@@ -36,20 +36,19 @@ struct RgxMatch
 #ifdef LDEBUG
         PROFILE_FUNCTION();
 #endif
-
+        // a->b->c
         init(m_Start, curr);
         for (const auto &ch : checkStr)
         {
             step(curr, ch, next);
             std::swap(curr, next);
         }
-
         return is_match(curr);
     }
 
   private:
     // If the final state list contain *match-state* the the string matches.
-    bool is_match(std::vector<StatePtr_t> &sHolder)
+    bool is_match(std::vector<StatePtr_t> &sHolder)      
     {
         for (auto &state : sHolder)
         {
@@ -121,9 +120,8 @@ struct RgxMatch
     // NFA has been built, we need to simulate it.
     // The simulation requires tracking State sets, which are stored as a simple vector:
     uint32_t m_ListID{0};
-    std::vector<StatePtr_t> curr;
-    std::vector<StatePtr_t> next;
-
+    std::vector<StatePtr_t> curr, next;
+    friend class DState;
     StatePtr_t m_Start;
 };
 

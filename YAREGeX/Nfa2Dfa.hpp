@@ -13,7 +13,6 @@
 #include "yaregex_common.h"
 
 /**
- * According to Enginnering Compiler Chapter-2 (Subset construction) :
  * The algorithm, shown in Figure 2.6, constructs a set Q whose elements, qi
  * are Valid configuration each a subset of N, that is, each qi 2 2N . When the algorithm halts, each
  * configuration of an NFA that can be reached by some input string
@@ -23,9 +22,22 @@
  *
  * The algorithm begins with an initial set, q0, that contains n0 and any states
  * in the nfa that can be reached from n0 along paths that contain only
+ *
+ *  - Engineering a Compiler Chapter-2 (Subset construction)
  */
 
 namespace lambda
 {
+using StatePtrVec_t = std::vector<StatePtr_t>;
+using T = std::pair<StatePtrVec_t, int8_t>;
+struct DState
+{
+    DState(StatePtrVec_t &l)
+    {
+    }
+
+  private:
+    std::map<T, StatePtrVec_t> m_Next;
+};
 
 } // namespace lambda

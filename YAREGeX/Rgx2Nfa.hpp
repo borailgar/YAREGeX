@@ -26,20 +26,15 @@ struct State
         Split = 256,
         Match = 257
     };
-
     State(const int data) : ch(data), next0(nullptr), next1(nullptr)
     {
     }
-
     State(const int data, const std::shared_ptr<State> &n0, const std::shared_ptr<State> &n1)
         : ch(data), next0(n0), next1(n1)
     {
     }
-
-    int ch;
-    int last_list{0};
-    std::shared_ptr<State> next0;
-    std::shared_ptr<State> next1;
+    int ch, last_list{0};
+    std::shared_ptr<State> next0, next1;
 };
 
 // If any non - static data member of a union has a

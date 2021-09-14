@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YAREGeX", "YAREGeX\YAREGeX.vcxproj", "{F118AE5C-FBBA-4326-B6A3-787C97868965}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "YAREGeX-Test", "YAREGeX-Test\YAREGeX-Test.vcxproj", "{2E92C97F-8382-4A17-BA1D-5F74DE569671}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{F118AE5C-FBBA-4326-B6A3-787C97868965}.Release|x64.Build.0 = Release|x64
 		{F118AE5C-FBBA-4326-B6A3-787C97868965}.Release|x86.ActiveCfg = Release|Win32
 		{F118AE5C-FBBA-4326-B6A3-787C97868965}.Release|x86.Build.0 = Release|Win32
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Debug|x64.ActiveCfg = Debug|x64
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Debug|x64.Build.0 = Debug|x64
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Debug|x86.ActiveCfg = Debug|Win32
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Debug|x86.Build.0 = Debug|Win32
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Release|x64.ActiveCfg = Release|x64
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Release|x64.Build.0 = Release|x64
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Release|x86.ActiveCfg = Release|Win32
+		{2E92C97F-8382-4A17-BA1D-5F74DE569671}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

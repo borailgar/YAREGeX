@@ -2,6 +2,7 @@
 #include <array>
 #include <cassert>
 #include <deque>
+#include <map>
 #include <ostream>
 #include <stack>
 #include <string>
