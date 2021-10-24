@@ -1,15 +1,20 @@
-#include "NfaMatcher.hpp"
-#include "Rgx2Nfa.hpp"
+#include "FSM/NfaMatcher.hpp"
+#include "FSM/Rgx2Nfa.hpp"
 #include <iostream>
-#ifdef LDEBUG
-#include "Benchmark.hpp"
-#endif
 
-using namespace lambda;
 int main(void)
 {
-    StatePtr_t nfa = make_nfa({"a.(b|c)*"});
-    RgxString rgx{"a.(b|c)*"};
-    std::cout << rgx << std::endl;
+    auto nfa = lambda::make_nfa({"a.(a+b)*.b"});
+    lambda::RgxMatch rgxMatch(nfa);
+
+    if (rgxMatch.match("abba"))
+    {
+        // ...
+    }
+    else
+    {
+        // does not match with given string
+    }
+
     return 0;
 }

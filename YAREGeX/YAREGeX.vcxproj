@@ -143,17 +143,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Benchmark.hpp" />
+    <ClCompile Include="utility\Benchmark.hpp" />
     <ClCompile Include="YAREGeX.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MemDebugConsole.hpp" />
-    <ClInclude Include="Nfa2Dfa.hpp" />
-    <ClInclude Include="NfaMatcher.hpp" />
-    <ClInclude Include="Rgx2Nfa.hpp" />
-    <ClInclude Include="Rgx2Postfix.hpp" />
-    <ClInclude Include="resource.h" />
-    <ClInclude Include="yaregex_common.h" />
+    <ClInclude Include="utility\MemDebugConsole.hpp" />
+    <ClInclude Include="FSM\Nfa2Dfa.hpp" />
+    <ClInclude Include="FSM\NfaMatcher.hpp" />
+    <ClInclude Include="FSM\Rgx2Nfa.hpp" />
+    <ClInclude Include="regex_handler\Rgx2Postfix.hpp" />
+    <ClInclude Include="utility\yaregex_common.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

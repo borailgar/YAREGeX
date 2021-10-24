@@ -11,8 +11,8 @@
  *
  */
 
+#include "../utility/yaregex_common.h"
 #include "Rgx2Nfa.hpp"
-#include "yaregex_common.h"
 
 namespace lambda
 {
@@ -48,7 +48,7 @@ struct RgxMatch
 
   private:
     // If the final state list contain *match-state* the the string matches.
-    bool is_match(std::vector<StatePtr_t> &sHolder)      
+    bool is_match(std::vector<StatePtr_t> &sHolder)
     {
         for (auto &state : sHolder)
         {

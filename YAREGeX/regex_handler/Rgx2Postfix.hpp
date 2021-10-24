@@ -10,7 +10,7 @@
  * Version  : 0.9.1
  */
 
-#include "yaregex_common.h"
+#include "../utility/yaregex_common.h"
 
 #define _IN_
 

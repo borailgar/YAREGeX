@@ -9,8 +9,8 @@
  * Version  : 0.9.1
  */
 
-#include "Rgx2Postfix.hpp"
-#include "yaregex_common.h"
+#include "../regex_handler/Rgx2Postfix.hpp"
+#include "../utility/yaregex_common.h"
 
 namespace lambda
 {
@@ -162,11 +162,6 @@ struct StateHelper
 
 StatePtr_t make_nfa(RgxString &&postRegex)
 {
-#ifdef LDEBUG
-    std::cout << "postRegex = " << postRegex << std::endl;
-    PROFILE_FUNCTION();
-#endif
-
     std::stack<NState> nfa_stack;
     for (auto &&ch : postRegex)
     {
@@ -182,7 +177,6 @@ StatePtr_t make_nfa(RgxString &&postRegex)
 
             auto nfa0 = nfa_stack.top();
             nfa_stack.pop();
-
             StateHelper::Funcs().patch_list(nfa0.slist, nfa1.state_ptr);
 #if STL_WAY
             nfa_stack.emplace(nfa0.state_ptr, std::move(nfa1.slist));

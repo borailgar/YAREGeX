@@ -21,30 +21,27 @@
     <ClCompile Include="YAREGeX.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Benchmark.hpp">
+    <ClCompile Include="utility\Benchmark.hpp">
       <Filter>Source Files\Test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Rgx2Postfix.hpp">
+    <ClInclude Include="regex_handler\Rgx2Postfix.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="MemDebugConsole.hpp">
+    <ClInclude Include="utility\MemDebugConsole.hpp">
       <Filter>Source Files\Test</Filter>
     </ClInclude>
-    <ClInclude Include="Rgx2Nfa.hpp">
+    <ClInclude Include="FSM\Rgx2Nfa.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="NfaMatcher.hpp">
+    <ClInclude Include="FSM\NfaMatcher.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="Nfa2Dfa.hpp">
+    <ClInclude Include="FSM\Nfa2Dfa.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="yaregex_common.h">
+    <ClInclude Include="utility\yaregex_common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

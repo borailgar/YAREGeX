@@ -33,7 +33,8 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
-    <ClCompile Include="test.cpp" />
+    <ClCompile Include="Rgx2NfaTest.cpp" />
+    <ClCompile Include="RgxString.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

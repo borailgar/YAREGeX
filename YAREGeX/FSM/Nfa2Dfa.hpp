@@ -9,8 +9,8 @@
  * Version  : 0.9.1
  */
 
+#include "../utility/yaregex_common.h"
 #include "NfaMatcher.hpp"
-#include "yaregex_common.h"
 
 /**
  * The algorithm, shown in Figure 2.6, constructs a set Q whose elements, qi
