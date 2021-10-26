@@ -1,5 +1,5 @@
 # YAREGeX
-Yet another simple Regular Expression matching library. 
+Yet another tiny Regular Expression matching library. 
 Compiles NFA from regex string and simulates NFA using Thompson's algorithm. 
 
 Implements 2/3 states: 
